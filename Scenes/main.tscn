@@ -1,3 +1,56 @@
 [gd_scene format=3 uid="uid://qy5b7umxeu0v"]
 
+[ext_resource type="Script" uid="uid://b86unn7ntsc0w" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dxirdrha3gy36" path="res://Scenes/bird.tscn" id="1_jjgbg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bo1nx"]
+font_size = 60
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
+normal = Vector2(0, 1)
+distance = -2.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
+distance = -650.0
+
 [node name="main" type="Node2D" unique_id=35215023]
+script = ExtResource("1_bo1nx")
+
+[node name="Bird" parent="." unique_id=1338113420 instance=ExtResource("1_jjgbg")]
+position = Vector2(125, 350)
+
+[node name="Timer" type="Timer" parent="." unique_id=1379042449]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=175995099]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1898639459]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=127133758]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 13.0
+offset_right = 62.0
+offset_bottom = 96.0
+text = "0"
+label_settings = SubResource("LabelSettings_bo1nx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=109299689]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1064771688]
+shape = SubResource("WorldBoundaryShape2D_bo1nx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1927320151]
+shape = SubResource("WorldBoundaryShape2D_8gbba")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

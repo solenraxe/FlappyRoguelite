@@ -8,6 +8,8 @@
 radius = 30.066593
 
 [node name="Bird" type="CharacterBody2D" unique_id=1338113420]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_i8bdw")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=786947616]

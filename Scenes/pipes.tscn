@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dqrdw2u12ryp0"]
+
+[ext_resource type="Script" uid="uid://clwuslm07ie87" path="res://Scripts/pipes.gd" id="1_uhra5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_41b8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41b8k"]
+size = Vector2(100, 499.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhra5"]
+size = Vector2(100, 300)
+
+[node name="Pipes" type="Node2D" unique_id=1681535828]
+script = ExtResource("1_uhra5")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1755052214]
+position = Vector2(0, -400)
+scale = Vector2(100, 500)
+mesh = SubResource("QuadMesh_41b8k")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=1315514056]
+position = Vector2(0, 400)
+scale = Vector2(100, 500)
+mesh = SubResource("QuadMesh_41b8k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1113003222]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1357419078]
+position = Vector2(0, -399.75)
+shape = SubResource("RectangleShape2D_41b8k")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1862643683]
+position = Vector2(0, 400)
+shape = SubResource("RectangleShape2D_41b8k")
+
+[node name="Score" type="Area2D" parent="." unique_id=756241637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Score" unique_id=1471779085]
+shape = SubResource("RectangleShape2D_uhra5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_entered" from="Score" to="." method="_on_score_body_entered"]
