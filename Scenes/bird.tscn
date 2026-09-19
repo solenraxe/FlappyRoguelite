@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dxirdrha3gy36"]
+
+[ext_resource type="Script" uid="uid://canwm2antuesb" path="res://Scripts/bird.gd" id="1_i8bdw"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ygmfd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8bdw"]
+radius = 30.066593
+
+[node name="Bird" type="CharacterBody2D" unique_id=1338113420]
+script = ExtResource("1_i8bdw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=786947616]
+scale = Vector2(60, 60)
+mesh = SubResource("SphereMesh_ygmfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1801904167]
+shape = SubResource("CircleShape2D_i8bdw")
