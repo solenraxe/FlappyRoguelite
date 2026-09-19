@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Autoload="*uid://gnrkr5p6klw7"
+scene_switcher="*uid://cmofch7poryf"
 
 [editor_plugins]
 

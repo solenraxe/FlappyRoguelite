@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c5op62kolb6tb"]
+
+[ext_resource type="Script" uid="uid://dk6xedvngx1s3" path="res://Scripts/menu.gd" id="1_1rerr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4yt8"]
+font_size = 60
+
+[node name="menu" type="Node2D" unique_id=722891974]
+script = ExtResource("1_1rerr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1503221695]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=802045679]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/Control" unique_id=1852712202]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=255554049]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.0
+offset_top = -146.5
+offset_right = 291.0
+offset_bottom = 146.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press SPACE to play!"
+label_settings = SubResource("LabelSettings_u4yt8")
+horizontal_alignment = 1
+vertical_alignment = 1

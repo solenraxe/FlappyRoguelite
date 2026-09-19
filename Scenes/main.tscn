@@ -15,7 +15,7 @@ normal = Vector2(0, 1)
 distance = -2.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
-distance = -648.0
+distance = -646.0
 
 [node name="main" type="Node2D" unique_id=35215023]
 script = ExtResource("1_bo1nx")

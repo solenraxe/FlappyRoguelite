@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxirdrha3gy36"]
 
 [ext_resource type="Script" uid="uid://canwm2antuesb" path="res://Scripts/bird.gd" id="1_i8bdw"]
-[ext_resource type="Texture2D" uid="uid://deg1wqnw6tnha" path="res://Assets/Dino.png" id="2_mcegt"]
+[ext_resource type="Texture2D" uid="uid://ci5j5h4spjkeb" path="res://Assets/Dino.png" id="2_mcegt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8bdw"]
 radius = 21.095022
