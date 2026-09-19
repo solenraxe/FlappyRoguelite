@@ -3,24 +3,34 @@
 [ext_resource type="Script" uid="uid://b86unn7ntsc0w" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dxirdrha3gy36" path="res://Scenes/bird.tscn" id="1_jjgbg"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_bo1nx"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_bo1nx"]
-font_size = 60
+font_size = 30
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bo1nx"]
 normal = Vector2(0, 1)
 distance = -2.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8gbba"]
-distance = -650.0
+distance = -648.0
 
 [node name="main" type="Node2D" unique_id=35215023]
 script = ExtResource("1_bo1nx")
+
+[node name="Background" type="MeshInstance2D" parent="." unique_id=1709967792]
+modulate = Color(0.30879995, 0.518594, 1, 1)
+position = Vector2(575.4819, 324.87048)
+rotation = 3.1415927
+scale = Vector2(1149.9637, -650.74097)
+mesh = SubResource("QuadMesh_bo1nx")
 
 [node name="Bird" parent="." unique_id=1338113420 instance=ExtResource("1_jjgbg")]
 position = Vector2(125, 350)
 
 [node name="Timer" type="Timer" parent="." unique_id=1379042449]
-wait_time = 1.5
 one_shot = true
 autostart = true
 
@@ -40,7 +50,7 @@ offset_left = 22.0
 offset_top = 13.0
 offset_right = 62.0
 offset_bottom = 96.0
-text = "0"
+text = "Score : 0"
 label_settings = SubResource("LabelSettings_bo1nx")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=109299689]

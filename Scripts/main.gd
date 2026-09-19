@@ -6,7 +6,7 @@ func _ready() -> void:
 	Autoload.score = 0
 	
 func _process(_delta: float) -> void:
-	$CanvasLayer/Control/Label.text = str(Autoload.score)
+	$CanvasLayer/Control/Label.text = "Score : " +    str(Autoload.score)
 
 func _on_timer_timeout() -> void:
 	var pipesInst = pipes.instantiate()

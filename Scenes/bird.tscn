@@ -1,20 +1,18 @@
 [gd_scene format=3 uid="uid://dxirdrha3gy36"]
 
 [ext_resource type="Script" uid="uid://canwm2antuesb" path="res://Scripts/bird.gd" id="1_i8bdw"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_ygmfd"]
+[ext_resource type="Texture2D" uid="uid://deg1wqnw6tnha" path="res://Assets/Dino.png" id="2_mcegt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8bdw"]
-radius = 30.066593
+radius = 21.095022
 
 [node name="Bird" type="CharacterBody2D" unique_id=1338113420]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_i8bdw")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=786947616]
-scale = Vector2(60, 60)
-mesh = SubResource("SphereMesh_ygmfd")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1801904167]
 shape = SubResource("CircleShape2D_i8bdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2051685623]
+texture = ExtResource("2_mcegt")
